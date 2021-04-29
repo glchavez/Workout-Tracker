@@ -13,14 +13,14 @@ router.get("/api/workouts/range", (req, res) => {
 });
 
 // Create workout
-// router.post("/api/workouts", ({ body }, res) => {
-//     Workout.create(body)
-//         .then(workout => {
-//             res.json(workout);
-//         })
-//         .catch(err => {
-//             res.status(400).json(err);
-//         });
-// });
+router.post("/api/workouts", ({ body }, res) => {
+    Workout.create(body)
+        .then(exercise => {
+            res.json(exercise);
+        })
+        .catch(err => {
+            res.status(400).json(err);
+        });
+});
 
 module.exports = router;
