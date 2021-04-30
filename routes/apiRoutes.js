@@ -3,7 +3,14 @@ const Workout = require("../models/workout");
 
 // Get range of workouts for dashboard
 router.get("/api/workouts/range", (req, res) => {
-    Workout.find({})
+    Workout.aggregate([
+        {
+            $addFields: {
+                totalDuration: { $sum: "$exercises.duration" }
+            }
+        },
+    ])
+        .limit(7)
         .then(workouts => {
             res.json(workouts);
         })
