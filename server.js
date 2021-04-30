@@ -17,15 +17,12 @@ app.use(express.static("public"));
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
     useNewUrlParser: true,
-    useFindAndModify: false
+    useFindAndModify: false,
+    useUnifiedTopology: true
 });
 
 // routes
 app.use(require("./routes/apiRoutes"));
-
-app.listen(PORT, () => {
-    console.log(`App running on port ${PORT}!`);
-});
 
 
 // index route
@@ -41,4 +38,8 @@ app.get("/exercise", (req, res) => {
 // Stats display Route
 app.get("/stats", (req, res) => {
     res.sendFile(path.join(__dirname + "/public/stats.html"));
+});
+
+app.listen(PORT, () => {
+    console.log(`App running on port ${PORT}!`);
 });
