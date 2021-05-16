@@ -1,10 +1,10 @@
 # Workout-Tracker
 
-## Description
+This application is intended to help individuals track their workouts for personal goals, such as stength gaining, weight loss, or general motivation.
+
+## Overview
 
 This application allows users to track their exercise stats and view a weekly overview of their workouts.
-
-This application is intended to help individuals track their workouts for personal goals, such as stength gaining, weight loss, or general motivation.
 
 Main challenges faced when creating this application was creating routes that returned the sum of workout duration and weight lifted. For future improvements, i would like to create a share function, which you can compare workouts to friends for additional challanges/motivation.
 
